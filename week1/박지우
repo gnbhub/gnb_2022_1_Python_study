@@ -1,0 +1,72 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled0.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyPIp18raN7N8wRo2nKDaEoa",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/gnbhub/gnb_2022_1_Python_study/blob/master/week1/%EB%B0%95%EC%A7%80%EC%9A%B0\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yclEbeRVXJAx",
+        "outputId": "8171adfd-0266-4baf-e2d1-58ba099bbe09"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10진수 정수 입력 : 10\n",
+            "2진수 : 0b1010\n",
+            "8진수 : 0o12\n",
+            "16진수 : 0xa\n"
+          ]
+        }
+      ],
+      "source": [
+        "number = input(\"10진수 정수 입력 : \")\n",
+        "number = int(number)\n",
+        "print(\"2진수 : \"+bin(number))\n",
+        "print(\"8진수 : \"+oct(number))\n",
+        "print(\"16진수 : \"+hex(number))\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "RPZ_gcCGcIgK"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
