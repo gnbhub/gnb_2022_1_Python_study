@@ -1,0 +1,370 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled7.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyNfUxXf9T0FeoEl1+9ouWO4",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/gnbhub/gnb_2022_1_Python_study/blob/master/week3/kangdowan\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "id": "1dHAzq2uJMxd",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "5661f855-7b57-4766-bf1b-08651f748e9d"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "성별을 입력 (남:m, 여:f) : F\n",
+            "나이 입력 : 11\n",
+            "입단이 가능합니다\n"
+          ]
+        }
+      ],
+      "source": [
+        "gender = input(\"성별을 입력 (남:m, 여:f) : \")\n",
+        "\n",
+        "if gender.lower() =='f':\n",
+        "  age = int(input(\"나이 입력 : \"))\n",
+        "  if 10 <= age <= 12:\n",
+        "    print(\"입단이 가능합니다\")\n",
+        "  else:\n",
+        "    print(\"나이가 조건에 안맞습니다\")\n",
+        "else:\n",
+        "  print(\"여자만 모집합니다\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"1. 덧셈, 2.뺄셈, 3.곱셈, 4.나눗셈\")\n",
+        "menu = int(input(\"메뉴선택 : \"))\n",
+        "\n",
+        "if 1<=menu <= 4 :\n",
+        "    number1 = int(input(\"첫번째 수를 입력 :\"))\n",
+        "    number2 = int(input(\"두번째 수를 입력 :\"))\n",
+        "\n",
+        "if menu == 1:\n",
+        "  print(\"결과 :\", number1+number2)\n",
+        "elif menu == 2:\n",
+        "  print(\"결과 :\", number1-number2)\n",
+        "elif menu == 3:\n",
+        "  print(\"결과 :\", number1*number2)\n",
+        "elif menu == 4:\n",
+        "  print(\"결과 :\", number1/number2)\n",
+        "else:\n",
+        "  print(\"메뉴입력 에러\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ySsjNZvgOTwr",
+        "outputId": "09a75338-645c-40a2-f31f-ebe9e780f5e8"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1. 덧셈, 2.뺄셈, 3.곱셈, 4.나눗셈\n",
+            "메뉴선택 : 3\n",
+            "첫번째 수를 입력 :20\n",
+            "두번째 수를 입력 :3\n",
+            "결과 : 60\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "minNumber = int(input(\"작은 수 입력 : \"))\n",
+        "maxNumber = int(input(\"큰 수 입력 : \"))\n",
+        "\n",
+        "while True:\n",
+        "  if minNumber >= maxNumber:\n",
+        "    break\n",
+        "  minNumber += 1\n",
+        "  maxNumber -= 1\n",
+        "\n",
+        "print(\"중간값 :\", minNumber)\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "syzbBzKsOToS",
+        "outputId": "52c010c3-34e8-4239-fff3-a69a68c71d1e"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "작은 수 입력 : 150\n",
+            "큰 수 입력 : 480\n",
+            "중간값 : 315\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "passwd = \"python1234\"\n",
+        "tries = 1\n",
+        "\n",
+        "while tries < 6:\n",
+        "  guess = input(\"비밀번호 : \");\n",
+        "  if guess == passwd:\n",
+        "    print(\"비밀번호가 일치합니다\")\n",
+        "    break\n",
+        "  else:\n",
+        "    print(\"비밀번호가 일치하지 않습니다\")\n",
+        "    if tries != 5:\n",
+        "      print(\"비밀번호 %d회 오류입니다\" %tries)\n",
+        "      print(\"총 %d회 남았습니다\" %(5-tries))\n",
+        "    \n",
+        "    tries += 1\n",
+        "else:\n",
+        "    print(\"처음부터 다시 시작하세요\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wli0yK36lvwe",
+        "outputId": "095978b6-3a85-4f22-ba31-04d34da8e35e"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "비밀번호 : 123\n",
+            "비밀번호가 일치하지 않습니다\n",
+            "비밀번호 1회 오류입니다\n",
+            "총 4회 남았습니다\n",
+            "비밀번호 : 1234\n",
+            "비밀번호가 일치하지 않습니다\n",
+            "비밀번호 2회 오류입니다\n",
+            "총 3회 남았습니다\n",
+            "비밀번호 : 1452\n",
+            "비밀번호가 일치하지 않습니다\n",
+            "비밀번호 3회 오류입니다\n",
+            "총 2회 남았습니다\n",
+            "비밀번호 : 23452\n",
+            "비밀번호가 일치하지 않습니다\n",
+            "비밀번호 4회 오류입니다\n",
+            "총 1회 남았습니다\n",
+            "비밀번호 : 2345\n",
+            "비밀번호가 일치하지 않습니다\n",
+            "처음부터 다시 시작하세요\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "total = 0\n",
+        "for score in [100, 98, 85, 97, 74]:\n",
+        "    total += score\n",
+        "average = total / 5;\n",
+        "\n",
+        "print(\"합 : %d \" %total)\n",
+        "print(\"평균 : %.2f\" %average)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1PI0w00JnV05",
+        "outputId": "264b4767-9d50-443f-a86a-872fbafbdb05"
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "합 : 454 \n",
+            "평균 : 90.80\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for number in range(1,101):\n",
+        "  if number % 3 == 0 and number % 7 == 0:\n",
+        "    print(number, end = \" \")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VrICRjb7pAc1",
+        "outputId": "043e7681-775d-4003-b254-7d52182bdae4"
+      },
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "21 42 63 84 "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "number = int(input(\"수를 입력 : \"))\n",
+        "total = 0\n",
+        "for count in range(1, number+1):\n",
+        "   total += count\n",
+        "   if total > 10000:\n",
+        "     print(\"합이 10000을 넘는 수 :\", count)\n",
+        "     break\n",
+        "else:\n",
+        "  print(\"합이 10000을 넘지 않습니다\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XyC2DRbipgWd",
+        "outputId": "57aad7c7-b719-4065-bd6d-dcd5238ad3ef"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "수를 입력 : 100\n",
+            "합이 10000을 넘지 않습니다\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for line in range(1,6):\n",
+        "  for star in range(line):\n",
+        "    print(\"*\", end=\"\")\n",
+        "  print()\n",
+        "\n",
+        "for line in range(1,5):\n",
+        "  for star in range(line, 5):\n",
+        "    print(\"*\", end=\"\")\n",
+        "  print()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kMtDoKrMrPd4",
+        "outputId": "674cf2f5-c443-47c8-b0d8-c32d2bece61e"
+      },
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "*\n",
+            "**\n",
+            "***\n",
+            "****\n",
+            "*****\n",
+            "****\n",
+            "***\n",
+            "**\n",
+            "*\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "while True:\n",
+        "    prime = True\n",
+        "    number = int(input(\"수를 입력 (0:종료) : \"))\n",
+        "\n",
+        "    if number ==0:\n",
+        "      break\n",
+        "    if number ==1:\n",
+        "      print(\"값을 다시 입력하세요\")\n",
+        "      continue\n",
+        "\n",
+        "    for count in range(2, number):\n",
+        "      if number % count == 0:\n",
+        "        prime = False\n",
+        "        \n",
+        "    if prime:\n",
+        "      print(\"소수입니다\")\n",
+        "    else:\n",
+        "      print(\"소수가 아닙니다\")  "
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "egQ-VZzWOTlY",
+        "outputId": "93359742-a264-4d79-da4b-2dd148c3c555"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "수를 입력 (0:종료) : 11\n",
+            "소수입니다\n",
+            "수를 입력 (0:종료) : 16\n",
+            "소수가 아닙니다\n",
+            "수를 입력 (0:종료) : 0\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
